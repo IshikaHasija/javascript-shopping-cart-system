@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-text: #333;
+    --secondary-text: #555;
+    --border-color: #e0e0e0;
+    --background-light: #fff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--primary-text);
+    padding-top: 65px;
+}
+
+.product-page {
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--background-light);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 3px 3px rgba(224, 218, 218, 0.5);
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-heading {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cart-btn {
+    margin-right: 50px;
+    height: 40px;
+    width: 45px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+#cart-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#cart-btn:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.product-page h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 40px 0;
+}
+
+#product-container {
+    padding: 0 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+
+}
+
+.product-box {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, ;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+}
+
+.product-details-product-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    padding: 8px 15px;
+    background-color: #f45430;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.added-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+/* --- Cart Page Styles --- */
+
+body.cart-page {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-info h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.remove-item {
+    background-image: url(images/delete.png);
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.remove-item:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.9);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plus-item, .minus-item {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.plus-item:hover, .minus-item:hover {
+    background-color: #e9e9e9;
+}
+
+.item-quantity {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+
+
+ .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-page .product-details h3 {
+    margin-bottom: 5px;
+}
